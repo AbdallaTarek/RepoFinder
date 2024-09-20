@@ -7,30 +7,24 @@
 
 import Foundation
 
-protocol ReposListViewModelInterface: AnyObject {
+@MainActor
+protocol ReposListViewModelInterface: ObservableObject {
+    var reposListDataSource: [ReposListEntity] { get set }
     func fetchReposList()
-    func getReposListCount() async throws -> Int
 }
 
-class ReposListViewModel: ObservableObject {
-    @Published var reposListDataSource: [ReposListResponse]?
-
+@MainActor
+class ReposListViewModel: ReposListViewModelInterface {
+    @Published var reposListDataSource: [ReposListEntity] = []
     let useCase: ReposListUserCaseInterface
-    
+
     init(useCase: ReposListUserCaseInterface) {
         self.useCase = useCase
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            Task {
-                await self.fetchReposList()
-            }
-        }
     }
-    
-    func fetchReposList() async {
-        do {
+
+    func fetchReposList() {
+        Task {
             reposListDataSource = try await useCase.getGithubRepos()
-        } catch {
-            
         }
     }
 }

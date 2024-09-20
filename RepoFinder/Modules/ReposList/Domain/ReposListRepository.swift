@@ -8,19 +8,20 @@
 import Foundation
 
 protocol ReposListRepositoryInterface {
-    func fitchApiGithubRepos() async throws -> [ReposListResponse]
+    func fitchApiGithubRepos() async throws -> [ReposListModel]
 }
 
 class ReposListRepository: ReposListRepositoryInterface {
     init() {}
 
-    func fitchApiGithubRepos() async throws -> [ReposListResponse] {
+    func fitchApiGithubRepos() async throws -> [ReposListModel] {
         return [
-            ReposListResponse(
+            ReposListModel(
                 id: 0,
                 name: "Hello World",
                 fullName: "Abduallah Tarek",
-                owner: Owner(
+                owner: OwnerModel(
+                    id: 0,
                     login: "AbdallaTarek",
                     avatarURL: URL(string: "https://media.licdn.com/dms/image/v2/D4D03AQHgSGWExLHErA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1721952431761?e=1732147200&v=beta&t=IOqiNdGUhRBRN6d2ARjKrRO4RWpWs48vQjR1ZevIpHE")!
                 ),
@@ -28,11 +29,12 @@ class ReposListRepository: ReposListRepositoryInterface {
                 description: "Hello world repo",
                 createdAt: Date()
             ),
-            ReposListResponse(
+            ReposListModel(
                 id: 1,
                 name: "Hello World_2",
                 fullName: "Abduallah Tarek2",
-                owner: Owner(
+                owner: OwnerModel(
+                    id: 1,
                     login: "AbdallaTarek2",
                     avatarURL: URL(string: "https://media.licdn.com/dms/image/v2/D4D03AQHgSGWExLHErA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1721952431761?e=1732147200&v=beta&t=IOqiNdGUhRBRN6d2ARjKrRO4RWpWs48vQjR1ZevIpHE")!
                 ),
