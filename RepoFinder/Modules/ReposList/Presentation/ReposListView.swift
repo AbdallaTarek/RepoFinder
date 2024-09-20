@@ -15,6 +15,7 @@ struct ReposListView<ViewModel: ReposListViewModelInterface>: View {
             List(viewModel.reposListDataSource) { repo in
                 RepoItemView(repo: repo)
             }
+            .navigationTitle(Text("Github Repositories"))
             .onAppear {
                 viewModel.fetchReposList()
             }
@@ -26,7 +27,6 @@ struct ReposListView<ViewModel: ReposListViewModelInterface>: View {
 #Preview {
     ReposListFactoryContainer.view()
 }
-
 
 
 // import SwiftUI

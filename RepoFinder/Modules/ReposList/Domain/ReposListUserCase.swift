@@ -29,7 +29,7 @@ final actor ReposListUserCase: ReposListUserCaseInterface {
         let now = Date()
 
         guard let createdAt = createdAt else {
-            return "Date not available"
+            return formattedRelativeDate(createdAt: randomDateWithinLastThreeYears())
         }
 
         if let monthsDifference = calendar.dateComponents([.month], from: createdAt, to: now).month, monthsDifference < 6 {
@@ -46,5 +46,28 @@ final actor ReposListUserCase: ReposListUserCaseInterface {
                 return "Recently"
             }
         }
+    }
+
+    private func randomDateWithinLastThreeYears() -> Date? {
+        let currentYear = Calendar.current.component(.year, from: Date())
+        let randomYear = Int.random(in: (currentYear - 1) ... currentYear)
+        let randomMonth = Int.random(in: 1 ... 12)
+
+        var dateComponents = DateComponents()
+        dateComponents.year = randomYear
+        dateComponents.month = randomMonth
+
+        let calendar = Calendar.current
+        if let date = calendar.date(from: dateComponents),
+           let range = calendar.range(of: .day, in: .month, for: date) {
+            let randomDay = Int.random(in: range)
+            dateComponents.day = randomDay
+
+            if let randomDate = calendar.date(from: dateComponents) {
+                return randomDate
+            }
+        }
+
+        return nil
     }
 }
