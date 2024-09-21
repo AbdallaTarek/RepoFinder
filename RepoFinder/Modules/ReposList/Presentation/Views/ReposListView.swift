@@ -13,8 +13,16 @@ struct ReposListView<ViewModel: ReposListViewModelInterface>: View {
     var body: some View {
         NavigationView {
             List(viewModel.reposListDataSource) { repo in
-                NavigationLink(destination: RepositoryDetailsView(repositoryData: repo), label: { RepoItemView(repo: repo) })
+                NavigationLink(
+                    destination: RepositoryDetailsFactoryContainer.view(repositoryData: repo),
+                    label: {
+                        RepoItemView(
+                            repo: repo
+                        )
+                    })
             }
+            .listStyle(.inset)
+            .padding()
             .navigationTitle(Text("Github Repositories"))
             .onAppear {
                 viewModel.fetchReposList()

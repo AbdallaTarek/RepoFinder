@@ -16,4 +16,16 @@ struct ReposListEntity: Identifiable {
     let htmlURL: URL?
     let description: String
     let createdAt: String
+
+    static func mock(owner: OwnerEntity) -> Self {
+        .init(
+            repoId: 0,
+            name: "Abdullah",
+            fullName: "Abdullah Tarek",
+            owner: owner,
+            htmlURL: URL(string: "https://github.com"),
+            description: "This is a sample description.",
+            createdAt: "2024"
+        )
+    }
 }

@@ -9,18 +9,17 @@ import SwiftUI
 import URLSessionHTTPClient
 
 struct ReposListFactoryContainer {
-    
     static func service() -> ReposListServiceInterface {
-        let clint = URLSessionHTTPClient()
-        return ReposListService(clint: clint)
+        let client = URLSessionHTTPClient()
+        return ReposListService(client: client)
     }
-    
-    static func repositry() -> ReposListRepositoryInterface {
+
+    static func repository() -> ReposListRepositoryInterface {
         return ReposListRepository(service: Self.service())
     }
 
     static func useCase() -> ReposListUserCaseInterface {
-        let repository = Self.repositry()
+        let repository = Self.repository()
         return ReposListUserCase(repository: repository)
     }
 

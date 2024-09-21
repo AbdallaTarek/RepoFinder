@@ -13,14 +13,14 @@ protocol ReposListServiceInterface {
 }
 
 class ReposListService: ReposListServiceInterface {
-    private let clint: HTTPClient
+    private let client: HTTPClient
 
-    init(clint: HTTPClient) {
-        self.clint = clint
+    init(client: HTTPClient) {
+        self.client = client
     }
 
     func fitchRepoList() async throws -> [ReposListModel] {
         let endPoint: HTTPEndPoint = RepoListEndPoint()
-        return try await clint.perform(endpoint: endPoint).defaultMap(to: [ReposListModel].self)
+        return try await client.perform(endpoint: endPoint).defaultMap(to: [ReposListModel].self)
     }
 }

@@ -1,26 +1,29 @@
 //
-//  ReposListUserCase.swift
+//  RepositoryDetailsUserCase.swift
 //  RepoFinder
 //
-//  Created by Abdullah Tarek on 19/09/2024.
+//  Created by Abdullah Tarek on 20/09/2024.
 //
 
 import Foundation
 
-protocol ReposListUserCaseInterface {
-    func getGithubRepos() async throws -> [ReposListEntity]
+protocol RepositoryDetailsUserCaseInterface: AnyObject {
+    func getRepositoryCommits() async throws -> [CommitEntity]
 }
 
-final actor ReposListUserCase: ReposListUserCaseInterface {
-    private let repository: ReposListRepositoryInterface
+final actor RepositoryDetailsUserCase: RepositoryDetailsUserCaseInterface {
+    var fullName: String
 
-    public init(repository: ReposListRepositoryInterface) {
+    private let repository: RepositoryDetailsRepositoryInterface
+
+    init(repository: RepositoryDetailsRepositoryInterface, fullName: String) {
         self.repository = repository
+        self.fullName = fullName
     }
 
-    func getGithubRepos() async throws -> [ReposListEntity] {
-        return try await repository.fitchApiGithubRepos().map({
-            $0.asRepoEntity(createdAt: formattedRelativeDate(createdAt: $0.createdAt))
+    func getRepositoryCommits() async throws -> [CommitEntity] {
+        return try await repository.fitchRepositoryCommits(fullName: fullName).map({
+            $0.asCommitEntity(createdAt: $0.commit?.committer?.date ?? "")
         })
     }
 

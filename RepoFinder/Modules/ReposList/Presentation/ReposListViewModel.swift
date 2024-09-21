@@ -16,6 +16,7 @@ protocol ReposListViewModelInterface: ObservableObject {
 @MainActor
 class ReposListViewModel: ReposListViewModelInterface {
     @Published var reposListDataSource: [ReposListEntity] = []
+    
     let useCase: ReposListUserCaseInterface
 
     init(useCase: ReposListUserCaseInterface) {

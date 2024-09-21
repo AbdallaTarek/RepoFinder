@@ -1,29 +1,24 @@
 //
-//  RepositoryDetailsView.swift
+//  RepositoryDetailsHeaderView.swift
 //  RepoFinder
 //
-//  Created by Abdullah Tarek on 20/09/2024.
+//  Created by Abdullah Tarek on 21/09/2024.
 //
 
 import SwiftUI
 
-struct RepositoryDetailsView: View {
+struct RepositoryDetailsHeaderView: View {
     var repositoryData: ReposListEntity
+    var commitsCount: Int
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 16) {
-                repositoryTitleSection
-                ownerInfoSection
-                Divider()
-                descriptionSection
-                statisticsSection
-                Divider()
-                Spacer()
-            }
-            .padding()
+        VStack(spacing: 16) {
+            repositoryTitleSection
+            ownerInfoSection
+            descriptionSection
+                .frame(maxWidth: .infinity, alignment: .leading)
+            statisticsSection
         }
-        .navigationBarTitleDisplayMode(.inline)
     }
 
     private var repositoryTitleSection: some View {
@@ -78,6 +73,7 @@ struct RepositoryDetailsView: View {
             statisticView(icon: "★", label: "Stars", value: "1.5k")
             statisticView(icon: "🍴", label: "Forks", value: "300")
             statisticView(icon: "🐛", label: "Issues", value: "42")
+            statisticView(icon: "🎉", label: "Commits", value: "\(commitsCount)")
         }
         .padding(.vertical)
     }
@@ -85,7 +81,7 @@ struct RepositoryDetailsView: View {
     private func statisticView(icon: String, label: String, value: String) -> some View {
         VStack(alignment: .center) {
             Text(icon)
-                .font(.largeTitle)
+                .font(.title)
                 .padding(.bottom, 4)
             Text(label)
                 .font(.subheadline)
@@ -93,8 +89,4 @@ struct RepositoryDetailsView: View {
                 .font(.headline)
         }
     }
-}
-
-#Preview {
-    RepositoryDetailsView(repositoryData: ReposListEntity(repoId: 0, name: "Abdullah", fullName: "Abdullah Tarek", owner: OwnerEntity(ownerId: 0, login: "axxxxs", avatar: URL(string: "https://avatars.githubusercontent.com/u/1?v=4")), htmlURL: URL(string: "https://github.com"), description: "This is a sample description.", createdAt: "2024"))
 }
