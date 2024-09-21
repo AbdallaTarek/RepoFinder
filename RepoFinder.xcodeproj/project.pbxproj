@@ -11,8 +11,19 @@
 		F69514282C9D9CC80054FC58 /* URLSessionHTTPClient in Frameworks */ = {isa = PBXBuildFile; productRef = F69514272C9D9CC80054FC58 /* URLSessionHTTPClient */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F6DFC2862C9F1E3F0072D64E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F67567242C9CAA4300CBB073 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F675672B2C9CAA4300CBB073;
+			remoteInfo = RepoFinder;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		F675672C2C9CAA4300CBB073 /* RepoFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RepoFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6DFC2822C9F1E3F0072D64E /* RepoFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RepoFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -24,6 +35,11 @@
 		F695141F2C9D9C890054FC58 /* Package */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Package;
+			sourceTree = "<group>";
+		};
+		F6DFC2832C9F1E3F0072D64E /* RepoFinderTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = RepoFinderTests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -38,6 +54,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F6DFC27F2C9F1E3F0072D64E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -46,6 +69,7 @@
 			children = (
 				F695141F2C9D9C890054FC58 /* Package */,
 				F675672E2C9CAA4300CBB073 /* RepoFinder */,
+				F6DFC2832C9F1E3F0072D64E /* RepoFinderTests */,
 				F69514242C9D9CC80054FC58 /* Frameworks */,
 				F675672D2C9CAA4300CBB073 /* Products */,
 			);
@@ -55,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				F675672C2C9CAA4300CBB073 /* RepoFinder.app */,
+				F6DFC2822C9F1E3F0072D64E /* RepoFinderTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,6 +119,29 @@
 			productReference = F675672C2C9CAA4300CBB073 /* RepoFinder.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F6DFC2812C9F1E3F0072D64E /* RepoFinderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6DFC2882C9F1E3F0072D64E /* Build configuration list for PBXNativeTarget "RepoFinderTests" */;
+			buildPhases = (
+				F6DFC27E2C9F1E3F0072D64E /* Sources */,
+				F6DFC27F2C9F1E3F0072D64E /* Frameworks */,
+				F6DFC2802C9F1E3F0072D64E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F6DFC2872C9F1E3F0072D64E /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F6DFC2832C9F1E3F0072D64E /* RepoFinderTests */,
+			);
+			name = RepoFinderTests;
+			packageProductDependencies = (
+			);
+			productName = RepoFinderTests;
+			productReference = F6DFC2822C9F1E3F0072D64E /* RepoFinderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -106,6 +154,10 @@
 				TargetAttributes = {
 					F675672B2C9CAA4300CBB073 = {
 						CreatedOnToolsVersion = 16.0;
+					};
+					F6DFC2812C9F1E3F0072D64E = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = F675672B2C9CAA4300CBB073;
 					};
 				};
 			};
@@ -124,12 +176,20 @@
 			projectRoot = "";
 			targets = (
 				F675672B2C9CAA4300CBB073 /* RepoFinder */,
+				F6DFC2812C9F1E3F0072D64E /* RepoFinderTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F675672A2C9CAA4300CBB073 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6DFC2802C9F1E3F0072D64E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -146,7 +206,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F6DFC27E2C9F1E3F0072D64E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F6DFC2872C9F1E3F0072D64E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F675672B2C9CAA4300CBB073 /* RepoFinder */;
+			targetProxy = F6DFC2862C9F1E3F0072D64E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F67567382C9CAA4400CBB073 /* Debug */ = {
@@ -334,6 +409,42 @@
 			};
 			name = Release;
 		};
+		F6DFC2892C9F1E3F0072D64E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4UGRS9DGYT;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abdullahTarek.RepoFinderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RepoFinder.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RepoFinder";
+			};
+			name = Debug;
+		};
+		F6DFC28A2C9F1E3F0072D64E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4UGRS9DGYT;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abdullahTarek.RepoFinderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RepoFinder.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RepoFinder";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -351,6 +462,15 @@
 			buildConfigurations = (
 				F675673B2C9CAA4400CBB073 /* Debug */,
 				F675673C2C9CAA4400CBB073 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6DFC2882C9F1E3F0072D64E /* Build configuration list for PBXNativeTarget "RepoFinderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6DFC2892C9F1E3F0072D64E /* Debug */,
+				F6DFC28A2C9F1E3F0072D64E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
