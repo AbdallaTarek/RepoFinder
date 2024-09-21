@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		F69514262C9D9CC80054FC58 /* HTTPClient in Frameworks */ = {isa = PBXBuildFile; productRef = F69514252C9D9CC80054FC58 /* HTTPClient */; };
+		F69514282C9D9CC80054FC58 /* URLSessionHTTPClient in Frameworks */ = {isa = PBXBuildFile; productRef = F69514272C9D9CC80054FC58 /* URLSessionHTTPClient */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		F675672C2C9CAA4300CBB073 /* RepoFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RepoFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -16,6 +21,11 @@
 			path = RepoFinder;
 			sourceTree = "<group>";
 		};
+		F695141F2C9D9C890054FC58 /* Package */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Package;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -23,6 +33,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F69514282C9D9CC80054FC58 /* URLSessionHTTPClient in Frameworks */,
+				F69514262C9D9CC80054FC58 /* HTTPClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,7 +44,9 @@
 		F67567232C9CAA4300CBB073 = {
 			isa = PBXGroup;
 			children = (
+				F695141F2C9D9C890054FC58 /* Package */,
 				F675672E2C9CAA4300CBB073 /* RepoFinder */,
+				F69514242C9D9CC80054FC58 /* Frameworks */,
 				F675672D2C9CAA4300CBB073 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +57,13 @@
 				F675672C2C9CAA4300CBB073 /* RepoFinder.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F69514242C9D9CC80054FC58 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -62,9 +83,12 @@
 			);
 			fileSystemSynchronizedGroups = (
 				F675672E2C9CAA4300CBB073 /* RepoFinder */,
+				F695141F2C9D9C890054FC58 /* Package */,
 			);
 			name = RepoFinder;
 			packageProductDependencies = (
+				F69514252C9D9CC80054FC58 /* HTTPClient */,
+				F69514272C9D9CC80054FC58 /* URLSessionHTTPClient */,
 			);
 			productName = RepoFinder;
 			productReference = F675672C2C9CAA4300CBB073 /* RepoFinder.app */;
@@ -251,15 +275,16 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"RepoFinder/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 4UGRS9DGYT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Repo Finder";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -267,6 +292,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.abdullahTarek.RepoFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -280,15 +308,16 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"RepoFinder/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 4UGRS9DGYT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Repo Finder";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,6 +325,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.abdullahTarek.RepoFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -324,6 +356,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F69514252C9D9CC80054FC58 /* HTTPClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HTTPClient;
+		};
+		F69514272C9D9CC80054FC58 /* URLSessionHTTPClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = URLSessionHTTPClient;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F67567242C9CAA4300CBB073 /* Project object */;
 }
